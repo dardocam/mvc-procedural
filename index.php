@@ -8,26 +8,26 @@
 </head>
 
 <body>
+    <?php require_once "./core/configApp.php" ?>
     <header>
         <nav>
             <li>
-                <a href="http://localhost/dwd-proyecto/index.php?page=home">HOME</a>
+                <a href=<?= APP_URL . "index.php?page=home" ?>>HOME</a>
             </li>
             <li>
-                <a href="http://localhost/dwd-proyecto/index.php?page=login">LOGIN</a>
+                <a href=<?= APP_URL . "index.php?page=login" ?>>LOGIN</a>
             </li>
             <li>
-                <a href="http://localhost/dwd-proyecto/index.php?page=registro">REGISTRARCE</a>
+                <a href=<?= APP_URL . "index.php?page=registro" ?>>REGISTRARCE</a>
             </li>
         </nav>
     </header>
 
     <?php
-
     require_once "./core/router.php";
 
     $pages = [
-        'home' => [1, 2, 3],
+        'home' => [],
         'login' => [],
         'registro' => []
     ];

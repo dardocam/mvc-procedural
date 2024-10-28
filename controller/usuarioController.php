@@ -4,4 +4,13 @@ require_once "./core/conexionDB.php";
 
 $conexionDB = openDbConnect();
 
-var_dump($conexionDB);
+
+function Ingresar()
+{
+    var_dump($_POST);
+}
+
+
+if (!empty($action)) {
+    ucfirst($action)();
+}

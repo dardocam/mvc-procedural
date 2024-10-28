@@ -1,6 +1,8 @@
 <?php
 
-const APP_NAME = 'dwd-proyecto';
+const APP_NAME = 'mvc-procedural';
+const APP_URL = 'http://localhost/' . APP_NAME . '/';
+
 
 const DBM_NAME = 'dwd-proyecto';
 const DBM_HOST = 'localhost';

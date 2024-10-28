@@ -13,6 +13,7 @@ function routingPages(array $pages)
         exit;
     }
     if (!isset($_GET['page']) && !isset($_GET['controller'])) {
+        $params = $pages['home'];
         require_once "./view/homeView.php";
         exit;
     }
@@ -22,10 +23,13 @@ function routingPages(array $pages)
 function routingControllers(array $controllers)
 {
     if (isset($_GET['controller'])) {
-        foreach ($controllers as $controller => $params) {
-            if ($_GET['controller'] == $controller) {
-                require_once "./controller/$controller" . "Controller.php";
-                exit;
+        if (isset($_GET['action'])) {
+            foreach ($controllers as $controller => $params) {
+                if ($_GET['controller'] == $controller) {
+                    $action = $_GET['action'];
+                    require_once "./controller/$controller" . "Controller.php";
+                    exit;
+                }
             }
         }
         require_once "./view/notFoundView.php";

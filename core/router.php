@@ -32,7 +32,7 @@ function routingControllers(array $controllers)
                 }
             }
         }
-        require_once "./view/notFoundView.php";
-        exit;
     }
+    require_once "./view/notFoundView.php";
+    exit;
 }
